@@ -17,4 +17,9 @@ public class ManejoErrores {
     public ResponseEntity<String> handleNumberFormatException(NumberFormatException ex) {
         return new ResponseEntity<>("Error: El valor ingresado no es numérico", HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(NullPointerException.class)
+    public ResponseEntity<String> handlerNullPointerException(NullPointerException ex) {
+        return new ResponseEntity<>("Error: El valor de la variable es nulo", HttpStatus.BAD_REQUEST);
+    }
 }
